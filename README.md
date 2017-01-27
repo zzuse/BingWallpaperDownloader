@@ -2,15 +2,17 @@
 # BingWallpaperDownloader   
 written in golang.   
 download bing beautiful wallpapers for only desktop usage.   
-inspired by https://github.com/redstoneleo/BingNiceWallpapers
+inspired by https://github.com/redstoneleo/BingNiceWallpapers   
+inspired by https://blog.hyperexpert.com/shell-script-to-download-bings-daily-image-as-a-wallpaper-for-mac/   
 
-Download 7 wallpapers one time
+Download 7 wallpapers from 7 market place one time
 ------------
-If you run the program, it will downloads nearest 7  bing wallpaper from the Bing websites(location:zh-cn).   
+If you run the program, it will download nearest 7 bing wallpapers from the Bing websites.   
 Default it will save files to ./downloads directory.   
 You can specify other directory to save.   
 The filename is same as the Bing website, trim before the http slashes.   
-such as: VillersAbbey_ZH-CN10373383330_1920x1080.jpg   
+Such as: VillersAbbey_ZH-CN10373383330_1920x1080.jpg   
+Note: default resolution is 1920x1200, but U can specify parameters on your own. and saving image may fail cause some picture only have 1920x1080    
 
 Build and Installation
 ------------
@@ -32,12 +34,11 @@ just run:
 BingWallpaperDownload
 or
 BingWallpaperDownload.exe
-more parameters specifications not documented yet.But you can have a try.
+more parameters specifications not documented yet.   
+But you can have a try.   
 ```
 - - - - --
 #TODO
-other country location   
-filename add date   
 more testing   
 
 #License
