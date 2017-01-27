@@ -39,7 +39,9 @@ But you can have a try.
 ```
 - - - - --
 #TODO
+picture checksum history to avoid multiple download same file.   
 more testing   
+knowed issue: if U run this in China, maybe only get one zh-CN location, cause firewall   
 
 #License
 ----------
