@@ -21,7 +21,7 @@ const (
 )
 
 var (
-	numPoller  = flag.Int("p", 7, "country num")
+	numPoller  = flag.Int("d", 1, "date num")
 	savePath   = flag.String("s", "./downloads/", "save path")
 	resolution = flag.String("r", "1920x1200", "resolution")
 	Market     = []string{
@@ -94,15 +94,14 @@ func main() {
 		images:     make(map[string]int),
 		imagesLock: &sync.Mutex{},
 		pageIndex:  1,
-		rootURL:    "http://www.bing.com/HPImageArchive.aspx?format=js&idx={}&n=7&mkt=",
+		rootURL:    "http://www.bing.com/HPImageArchive.aspx?format=js&idx={}&n=",
 	}
 	os.MkdirAll(*savePath, 0777)
 	ctx.start()
 }
 
 func (ctx *beautiContext) start() {
-	log.Println("Poller ", *numPoller)
-	for i := 0; i < *numPoller; i++ {
+	for i := 0; i < len(Market); i++ {
 		log.Println("download Market", Market[i])
 		go ctx.downloadPage(Market[i])
 		wg.Add(1)
@@ -115,7 +114,7 @@ func (ctx *beautiContext) start() {
 func (ctx *beautiContext) downloadPage(market string) {
 	select {
 	default:
-		url := fmt.Sprintf("%s%s", ctx.rootURL, market)
+		url := fmt.Sprintf("%s%d&mkt=%s", ctx.rootURL, *numPoller, market)
 		log.Println("download json page", url)
 		resp, err := http.Get(url)
 		if err != nil {
