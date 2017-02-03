@@ -41,6 +41,7 @@ But you can have a try.
 ```
 - - - - --
 #TODO
+know issue: if the picture doesn't have 1920x1200, it will download a zero size picture. will fix this bug with the URL in json
 picture checksum to avoid multiple download same file.   
 more testing   
 knowed issue: if U run this in China, maybe get only one zh-CN location, cause firewall   
